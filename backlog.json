@@ -1,0 +1,188 @@
+[
+  {
+    "title": "Create repo, CI/CD setup",
+    "body": "Set up GitHub repository and CI/CD integration (e.g., Vercel).",
+    "labels": ["epic:infra", "sscs:1"],
+    "assignees": []
+  },
+  {
+    "title": "Setup FastAPI backend",
+    "body": "Initialize FastAPI project with healthcheck endpoint.",
+    "labels": ["epic:infra", "sscs:2"],
+    "assignees": []
+  },
+  {
+    "title": "Configure Supabase (auth + schema)",
+    "body": "Create tables for users, expenses, budgets, etc.",
+    "labels": ["epic:infra", "sscs:2"],
+    "assignees": []
+  },
+  {
+    "title": "Setup frontend boilerplate (React + Tailwind)",
+    "body": "Scaffold out React project using Tailwind CSS.",
+    "labels": ["epic:infra", "sscs:2"],
+    "assignees": []
+  },
+  {
+    "title": "Install and configure test suite",
+    "body": "Install Pytest and Playwright, configure basic tests.",
+    "labels": ["epic:infra", "sscs:2"],
+    "assignees": []
+  },
+  {
+    "title": "Implement income input component",
+    "body": "Create simple input field for user's monthly income.",
+    "labels": ["epic:input", "sscs:2"],
+    "assignees": []
+  },
+  {
+    "title": "Create expense input by category (fixed/variable)",
+    "body": "Allow users to input different expense categories with amounts.",
+    "labels": ["epic:input", "sscs:3"],
+    "assignees": []
+  },
+  {
+    "title": "Create savings goal input",
+    "body": "Add optional field for setting a savings goal.",
+    "labels": ["epic:input", "sscs:2"],
+    "assignees": []
+  },
+  {
+    "title": "Store inputs in Supabase",
+    "body": "Save user input into the database with user linkage.",
+    "labels": ["epic:input", "sscs:3"],
+    "assignees": []
+  },
+  {
+    "title": "Grouped form submission handler",
+    "body": "Wrap all inputs in a single submission pipeline.",
+    "labels": ["epic:input", "sscs:3"],
+    "assignees": []
+  },
+  {
+    "title": "Responsive UI for mobile-first usage",
+    "body": "Ensure all forms and output pages are responsive.",
+    "labels": ["epic:input", "sscs:3"],
+    "assignees": []
+  },
+  {
+    "title": "Implement static 50/30/20 budget rules",
+    "body": "Generate budget plan based on 50% essentials, 30% discretionary, 20% savings.",
+    "labels": ["epic:ai", "sscs:2"],
+    "assignees": []
+  },
+  {
+    "title": "Build AI-powered budget generator (OpenAI/Ollama)",
+    "body": "Use LLM to generate custom savings advice and budget plan.",
+    "labels": ["epic:ai", "sscs:8", "ai"],
+    "assignees": []
+  },
+  {
+    "title": "Add goal-aware optimization logic",
+    "body": "Tailor recommendations based on user savings goals.",
+    "labels": ["epic:ai", "sscs:5"],
+    "assignees": []
+  },
+  {
+    "title": "Write TDD tests for budget logic paths",
+    "body": "Cover AI and rule-based logic branches with tests.",
+    "labels": ["epic:ai", "sscs:3", "testing"],
+    "assignees": []
+  },
+  {
+    "title": "Add fallback if model fails (rules + logs)",
+    "body": "Implement error handling with fallback to static budgeting method.",
+    "labels": ["epic:ai", "sscs:5"],
+    "assignees": []
+  },
+  {
+    "title": "Render budget results in table format",
+    "body": "Display budget breakdown by category in simple table.",
+    "labels": ["epic:ui", "sscs:2"],
+    "assignees": []
+  },
+  {
+    "title": "Implement pie/bar chart of budget breakdown",
+    "body": "Visual representation of budget using Chart.js or similar.",
+    "labels": ["epic:ui", "sscs:3"],
+    "assignees": []
+  },
+  {
+    "title": "Add plain language savings summary (AI)",
+    "body": "Generate human-readable tip based on spending behavior.",
+    "labels": ["epic:ui", "sscs:5", "ai"],
+    "assignees": []
+  },
+  {
+    "title": "Create PDF and CSV export options",
+    "body": "Enable user to download budget report in multiple formats.",
+    "labels": ["epic:ui", "sscs:3"],
+    "assignees": []
+  },
+  {
+    "title": "Support anonymous mode w/ local storage",
+    "body": "Persist data in localStorage for users not logged in.",
+    "labels": ["epic:ui", "sscs:5"],
+    "assignees": []
+  },
+  {
+    "title": "Add sliders to simulate income/expense changes",
+    "body": "Let users experiment with budget inputs via sliders.",
+    "labels": ["epic:feedback", "sscs:3"],
+    "assignees": []
+  },
+  {
+    "title": "Regenerate budget on slider update",
+    "body": "Recompute plan dynamically with new inputs.",
+    "labels": ["epic:feedback", "sscs:5", "ai"],
+    "assignees": []
+  },
+  {
+    "title": "Implement thumbs-up/down feedback on tips",
+    "body": "Simple UI for user to rate generated savings suggestions.",
+    "labels": ["epic:feedback", "sscs:2"],
+    "assignees": []
+  },
+  {
+    "title": "Log feedback to DB",
+    "body": "Store user sentiment + comments on AI suggestions.",
+    "labels": ["epic:feedback", "sscs:2"],
+    "assignees": []
+  },
+  {
+    "title": "Add optimistic UI refresh",
+    "body": "Improve UX by instantly updating UI before DB confirmation.",
+    "labels": ["epic:feedback", "sscs:3"],
+    "assignees": []
+  },
+  {
+    "title": "Write unit tests for expense and income logic",
+    "body": "Cover business logic in backend models and functions.",
+    "labels": ["epic:qa", "sscs:2", "testing"],
+    "assignees": []
+  },
+  {
+    "title": "E2E tests for full flow (input → output)",
+    "body": "Write Playwright tests for the main application flow.",
+    "labels": ["epic:qa", "sscs:5", "testing"],
+    "assignees": []
+  },
+  {
+    "title": "Perform manual QA across screen sizes",
+    "body": "Test UI on mobile, tablet, and desktop resolutions.",
+    "labels": ["epic:qa", "sscs:2", "testing"],
+    "assignees": []
+  },
+  {
+    "title": "Deploy to staging and production",
+    "body": "Push the MVP to staging and final prod environment.",
+    "labels": ["epic:qa", "sscs:2"],
+    "assignees": []
+  },
+  {
+    "title": "Monitor LLM latency & error logs",
+    "body": "Track performance and failures in AI endpoints.",
+    "labels": ["epic:qa", "sscs:3", "observability"],
+    "assignees": []
+  }
+]
