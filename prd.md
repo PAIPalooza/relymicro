@@ -29,13 +29,13 @@
 
 | Feature | Description |
 |--------|-------------|
-| 🔢 Income & Expense Input | User-friendly form or voice input to capture income, rent, food, transportation, subscriptions, etc. |
+| 🔢 Income & Expense Input | User-friendly form to capture income, rent, food, transportation, subscriptions, etc. |
 | 🧠 AI Budget Generator | Uses rules + ML (e.g. 50/30/20 or custom rules) to split budget across categories. |
 | 💰 Savings Suggestion Engine | Recommends practical weekly/monthly savings goals based on goals and cash flow. |
 | 📊 Budget Visualizer | Pie chart / bar graph view of budget allocation with savings % badge. |
 | 📝 Savings Plan Breakdown | Breakdown of how much to save per week/day with motivational tips. |
 | 💬 Plain Language Feedback | "You're spending 32% on subscriptions. Cutting 10% would free $45/mo for savings." |
-| 🔐 Anonymous Mode | No account required, local storage option or one-click export to PDF. |
+| 💾 Local Storage | All data stored locally in browser, no account required. |
 
 ---
 
@@ -55,12 +55,11 @@
 ### 3. Output & Visualization
 - Budget table + visual pie chart
 - Plain language summary + actionable savings tip
-- “What if” sliders to simulate income/expense changes
+- "What if" sliders to simulate income/expense changes
 
 ### 4. Data Handling
-- Option for local-only usage
+- Browser local storage for data persistence
 - Export as PDF or CSV
-- Optional cloud sync via Supabase (if user logs in)
 
 ---
 
@@ -69,7 +68,7 @@
 | Category         | Requirement |
 |------------------|-------------|
 | ⏱️ Performance     | Instant feedback within 2 seconds |
-| 🔐 Privacy         | Fully anonymous use (no login required), with optional secure login |
+| 🔐 Privacy         | All data stored locally in browser |
 | 🎨 UX/UI          | Mobile-first, minimal UX, accessible design |
 | ⚙️ Compatibility   | Works on Chrome, Safari, Firefox, and iOS/Android browsers |
 | 🧪 Testing         | Unit and integration tests for AI logic and calculations |
@@ -81,11 +80,11 @@
 
 | Component | Tool |
 |----------|------|
-| Frontend | Next.js or React + Tailwind |
+| Frontend | Next.js + Tailwind |
 | Backend  | FastAPI |
-| Database | Supabase (Postgres) |
-| AI Logic | Python or LangChain w/ OpenAI or Ollama |
-| Hosting  | Vercel or Fly.io |
+| Database | Browser LocalStorage |
+| AI Logic | Python |
+| Hosting  | Vercel (frontend) + Fly.io (backend) |
 
 ---
 
@@ -93,15 +92,9 @@
 
 | Entity        | Fields |
 |---------------|--------|
-| `UserProfile` | `id`, `income`, `goals`, `risk_tolerance`, `created_at` |
-| `ExpenseItem` | `id`, `user_id`, `category`, `amount`, `is_fixed`, `notes` |
-| `BudgetPlan`  | `id`, `user_id`, `total_income`, `essential_total`, `discretionary_total`, `savings_total`, `created_at` |
-| `SavingsPlan` | `id`, `user_id`, `monthly_target`, `weekly_target`, `tips`, `created_at` |
-
----
-
-## 🔄 User Flow
-
+| `BudgetInput` | `income`, `fixed_expenses`, `variable_expenses`, `goals` |
+| `BudgetPlan`  | `total_income`, `essential_total`, `discretionary_total`, `savings_total`, `created_at` |
+| `SavingsPlan` | `monthly_target`, `weekly_target`, `tips`, `created_at` |
 
 ---
 
@@ -114,9 +107,10 @@
 
 ---
 
-## 🗓️ Future Enhancements
+## 🗓️ Future Enhancements (Post MVP)
 
+- User accounts and cloud sync
 - Link bank account for auto-imported transactions (Plaid API)
 - Savings challenge gamification (weekly milestones)
-- AI Advisor Bot: “Ask a Money Mentor” (LangChain agent)
+- AI Advisor Bot: "Ask a Money Mentor" (LangChain agent)
 - Multilingual support

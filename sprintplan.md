@@ -2,7 +2,7 @@
 
 **Sprint Duration**: 2 Weeks (10 working days)  
 **Team**: 1 PM, 1 Designer, 2 Engineers (Frontend + Backend), 1 QA  
-**Sprint Goal**: Launch an MVP that generates a personalized micro-budget and savings plan from user input.
+**Sprint Goal**: Launch an MVP that generates a personalized micro-budget and savings plan from user input, focusing on local storage and removing authentication.
 
 ---
 
@@ -24,11 +24,9 @@
 | ID    | Story                                              | SSCS | Owner    |
 |-------|-----------------------------------------------------|------|----------|
 | 1.1   | Initialize GitHub repo and CI/CD pipeline           | 1    | DevOps   |
-| 1.2   | Setup FastAPI backend with Supabase                 | 2    | Backend  |
+| 1.2   | Setup FastAPI backend                               | 2    | Backend  |
 | 1.3   | Setup React + Tailwind frontend                     | 2    | Frontend |
 | 1.4   | Configure test framework (pytest, Playwright)       | 2    | Backend/QA |
-
----
 
 ### 📦 Epic 2: User Input Interface
 
@@ -36,32 +34,23 @@
 |-------|--------------------------------------------------------|------|----------|
 | 2.1   | Build monthly income input form                        | 1    | Frontend |
 | 2.2   | Build expense category input (fixed/variable)          | 2    | Frontend |
-| 2.3   | Add optional savings goal input                        | 1    | Frontend |
-| 2.4   | Store user inputs in Supabase                          | 2    | Backend  |
+| 2.3   | Add savings goal input                                  | 1    | Frontend |
+| 2.4   | Store user inputs in local storage                     | 2    | Backend  |
 
----
-
-### 📦 Epic 3: AI Budget Engine
+### 📦 Epic 3: Budget Generation & Visualization
 
 | ID    | Story                                                    | SSCS | Owner    |
 |-------|-----------------------------------------------------------|------|----------|
-| 3.1   | Implement 50/30/20 rule logic as baseline                 | 2    | Backend  |
-| 3.2   | Build AI budget engine using OpenAI or Ollama             | 3    | Backend  |
-| 3.3   | Provide fallback rule-based allocation (offline fallback) | 3    | Backend  |
-| 3.4   | Write test cases for budget logic                         | 2    | Backend/QA |
+| 3.1   | Implement budget allocation engine                       | 2    | Backend  |
+| 3.2   | Create budget visualization                               | 2    | Frontend |
+| 3.3   | Add budget recommendations                                | 2    | Frontend |
 
----
-
-### 📦 Epic 4: Output & Visualization
+### 📦 Epic 4: Data Management & Export
 
 | ID    | Story                                                 | SSCS | Owner    |
 |-------|--------------------------------------------------------|------|----------|
-| 4.1   | Display budget as table                                | 1    | Frontend |
-| 4.2   | Add pie/bar chart for visualizing budget               | 2    | Frontend |
-| 4.3   | Show AI-generated plain-language savings tip           | 2    | Frontend |
-| 4.4   | Add export to PDF/CSV option                           | 2    | Frontend |
-
----
+| 4.1   | Implement local storage                                | 2    | Backend  |
+| 4.2   | Add export functionality (PDF, CSV)                    | 2    | Frontend |
 
 ### 📦 Epic 5: Feedback & Interactivity
 
@@ -70,8 +59,6 @@
 | 5.1   | Add thumbs-up/down feedback on savings tip          | 1    | Frontend |
 | 5.2   | Create sliders to simulate income/expense changes   | 3    | Frontend |
 | 5.3   | Regenerate budget on slider changes                 | 3    | Backend  |
-
----
 
 ### 📦 Epic 6: Testing, QA, and Deployment
 
@@ -101,11 +88,11 @@
 |-----|---------------------------------------------|
 | 1   | Sprint kickoff, wireframes, data modeling   |
 | 2   | Project setup, frontend/backend scaffolding |
-| 3   | Form components and Supabase integration    |
-| 4   | Budget engine (baseline logic)              |
-| 5   | AI budget logic and response formatting     |
-| 6   | Visuals (charts, tables), AI tips           |
-| 7   | Export feature and interactivity sliders    |
-| 8   | QA testing and bug fixing                   |
-| 9   | Internal review, deploy to staging          |
-| 10  | User testing, final fixes, MVP launch 🎉     |
+| 3   | Form components and local storage integration |
+| 4   | Budget engine (allocation logic)            |
+| 5   | Visuals (charts, tables), AI tips           |
+| 6   | Export feature and interactivity sliders    |
+| 7   | QA testing and bug fixing                   |
+| 8   | Internal review, deploy to staging          |
+| 9   | User testing, final fixes, MVP launch 🎉     |
+| 10  | Review and retrospective                    |
