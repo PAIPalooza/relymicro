@@ -1,34 +1,34 @@
+'use client';
+
+import { useState } from 'react';
+import IncomeForm from '../components/IncomeForm';
+
 export default function Home() {
+  const [monthlyIncome, setMonthlyIncome] = useState<number | null>(null);
+
+  const handleIncomeSubmit = (income: number) => {
+    setMonthlyIncome(income);
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
-      <h1 className="text-4xl font-bold mb-8">
-        Micro-Budget Advisor
-      </h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
-        <section 
-          data-testid="income-section"
-          className="p-6 bg-white rounded-lg shadow-lg"
-        >
-          <h2 className="text-2xl font-semibold mb-4">Income</h2>
-          <p className="text-gray-600">Track your monthly income</p>
-        </section>
+    <main className="min-h-screen p-4 md:p-8">
+      <div className="max-w-4xl mx-auto space-y-8">
+        <h1 className="text-3xl font-bold text-center text-gray-900">
+          Micro-Budget Advisor
+        </h1>
+        
+        <div className="bg-white shadow rounded-lg p-6">
+          <h2 className="text-xl font-semibold mb-4">Monthly Income</h2>
+          <IncomeForm onSubmit={handleIncomeSubmit} />
+        </div>
 
-        <section 
-          data-testid="expenses-section"
-          className="p-6 bg-white rounded-lg shadow-lg"
-        >
-          <h2 className="text-2xl font-semibold mb-4">Expenses</h2>
-          <p className="text-gray-600">Manage your expenses</p>
-        </section>
-
-        <section 
-          data-testid="savings-section"
-          className="p-6 bg-white rounded-lg shadow-lg"
-        >
-          <h2 className="text-2xl font-semibold mb-4">Savings</h2>
-          <p className="text-gray-600">Set and track savings goals</p>
-        </section>
+        {monthlyIncome && (
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+            <p className="text-green-700">
+              Monthly income set to: ${monthlyIncome.toLocaleString()}
+            </p>
+          </div>
+        )}
       </div>
     </main>
   );
